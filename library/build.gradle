@@ -38,7 +38,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.github.MaxVese'
-                artifactId = 'app-checker'
+                artifactId = 'Antivirus'
                 version = '1.1.1'
             }
         }
