@@ -20,13 +20,9 @@ class Antivirus {
     private var algorithm = ACMatch()
     private val signatures = ArrayList<Signature>()
 
-    fun loadSignatures(context: Context) {
+    fun loadSignatures(json: JSONObject) {
         signatures.clear()
         try {
-            val stream = context.assets.open("signatures/signatures.json")
-            val bytes = ByteArray(stream.available())
-            stream.read(bytes)
-            val json = JSONObject(String(bytes, StandardCharsets.UTF_8))
             val names = json.getJSONArray("names")
             val packages = json.getJSONArray("packages")
 
